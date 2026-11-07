@@ -1,9 +1,9 @@
 // Stránka Kávy – DataTable nad polem COFFEES (js/data.js) a modal s detailem
 
 const ROAST_BADGES = {
-  Filtr: 'text-bg-secondary',
-  Espresso: 'text-bg-dark',
-  Omni: 'text-bg-warning',
+  Filtr: 'badge-filtr',
+  Espresso: 'badge-espresso',
+  Omni: 'badge-omni',
 };
 
 const BREW_TIPS = {
@@ -79,7 +79,7 @@ document.querySelectorAll('input[name="roastFilter"]').forEach(radio => {
   });
 });
 
-// Filtr podle pražírny z URL, např. kavy.html?prazirna=Kafemlýn
+// Filtr podle pražírny z URL, např. kavy.html?prazirna=Doubleshot
 const roaster = new URLSearchParams(location.search).get('prazirna');
 if (roaster) {
   table.column(1).search(`^${DataTable.util.escapeRegex(roaster)}$`, true, false).draw();

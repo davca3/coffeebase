@@ -242,8 +242,128 @@ h1, h2, h3, h4, h5, .display-font {
 
 .recipe-steps { counter-reset: step; list-style: none; padding: 0; }
 
+/* ---------- Accordion ---------- */
+.accordion {
+  --bs-accordion-active-color: var(--cb-espresso);
+  --bs-accordion-active-bg: var(--cb-cream);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 .25rem rgba(200, 135, 58, .25);
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%236f4e37' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23c8873a' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+}
+
+/* ---------- Collapse – časté dotazy ---------- */
+.faq-item {
+  background: #fff;
+  border: 1px solid rgba(111, 78, 55, .15);
+  border-radius: .5rem;
+  margin-bottom: .5rem;
+  overflow: hidden;
+}
+
+.faq-toggle {
+  --bs-btn-color: var(--cb-espresso);
+  --bs-btn-hover-color: var(--cb-espresso);
+  --bs-btn-hover-bg: var(--cb-cream);
+  --bs-btn-active-color: var(--cb-espresso);
+  --bs-btn-active-bg: var(--cb-cream);
+  border: 0;
+  border-radius: 0;
+  padding: .75rem 1rem;
+  font-weight: 500;
+}
+
+.faq-toggle[aria-expanded="true"] { background-color: var(--cb-cream); }
+
+.faq-toggle:focus-visible { box-shadow: inset 0 0 0 .2rem rgba(200, 135, 58, .35); }
+
+.faq-toggle .bi {
+  display: inline-block;
+  color: var(--cb-caramel);
+  transition: transform .2s ease;
+}
+
+.faq-toggle[aria-expanded="true"] .bi { transform: rotate(180deg); }
+
+.faq-answer {
+  padding: .75rem 1rem 1rem 2.6rem;
+  color: var(--bs-secondary-color);
+}
+
 /* ---------- DataTable ---------- */
+#coffeeTable {
+  --bs-table-bg: #fff;
+  --bs-table-border-color: rgba(111, 78, 55, .12);
+  --dt-row-stripe: 200, 135, 58;
+  --dt-row-hover: 200, 135, 58;
+  border-radius: .5rem .5rem 0 0;
+  overflow: hidden;
+}
+
 #coffeeTable td { vertical-align: middle; }
+
+#coffeeTable thead th {
+  position: relative;
+  z-index: 0;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 0;
+  padding-bottom: calc(.5rem + 3px);
+}
+
+/* pozadí hlavičky přesahuje o 1 px do sousedních buněk, aby mezi nimi nevznikaly švy */
+#coffeeTable thead th::before {
+  content: "";
+  position: absolute;
+  inset: 0 -1px;
+  z-index: -1;
+  background: linear-gradient(to top, var(--cb-caramel) 3px, var(--cb-espresso) 3px);
+}
+
+#coffeeTable.table-striped > tbody > tr:nth-of-type(odd) > * {
+  box-shadow: inset 0 0 0 9999px rgba(var(--dt-row-stripe), .07);
+}
+
+#coffeeTable.table-hover > tbody > tr:hover > * {
+  box-shadow: inset 0 0 0 9999px rgba(var(--dt-row-hover), .16);
+}
+
+#coffeeTable thead th.dt-ordering-asc,
+#coffeeTable thead th.dt-ordering-desc { color: var(--cb-caramel); }
+
+/* šipka pro rozbalení řádku (DataTables Responsive) */
+#coffeeTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before {
+  border-left-color: var(--cb-caramel);
+}
+
+#coffeeTable.dtr-inline.collapsed > tbody > tr.dtr-expanded > td.dtr-control::before {
+  border-left-color: transparent;
+  border-top-color: var(--cb-caramel);
+}
+
+.dt-container .dt-info { color: var(--bs-secondary-color); }
+
+.dt-container .pagination {
+  --bs-pagination-color: var(--cb-coffee);
+  --bs-pagination-bg: #fff;
+  --bs-pagination-border-color: rgba(111, 78, 55, .2);
+  --bs-pagination-hover-color: var(--cb-espresso);
+  --bs-pagination-hover-bg: var(--cb-cream);
+  --bs-pagination-hover-border-color: rgba(111, 78, 55, .2);
+  --bs-pagination-focus-color: var(--cb-espresso);
+  --bs-pagination-focus-bg: var(--cb-cream);
+  --bs-pagination-focus-box-shadow: 0 0 0 .25rem rgba(200, 135, 58, .25);
+  --bs-pagination-active-bg: var(--cb-caramel);
+  --bs-pagination-active-border-color: var(--cb-caramel);
+  --bs-pagination-disabled-color: rgba(111, 78, 55, .4);
+  --bs-pagination-disabled-bg: var(--cb-milk);
+  --bs-pagination-disabled-border-color: rgba(111, 78, 55, .2);
+}
+
+/* štítky profilu pražení */
+.badge-filtr { background-color: var(--cb-cream); color: var(--cb-coffee); border: 1px solid rgba(111, 78, 55, .25); }
+.badge-espresso { background-color: var(--cb-espresso); color: #fff; }
+.badge-omni { background-color: var(--cb-caramel); color: #fff; }
 
 .sca-score {
   font-weight: 600;
