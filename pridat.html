@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Přidat kávu – coffeeBase</title>
+  <meta name="description" content="Přidejte novou výběrovou kávu do databáze coffeeBase.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Logo a hlavní menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-coffee sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>coffee<span class="brand-accent">Base</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Přepnout navigaci">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Úvod</a></li>
+          <li class="nav-item"><a class="nav-link" href="kavy.html"><i class="bi bi-cup-hot me-1"></i>Kávy</a></li>
+          <li class="nav-item"><a class="nav-link" href="prazirny.html"><i class="bi bi-fire me-1"></i>Pražírny</a></li>
+          <li class="nav-item"><a class="nav-link" href="priprava.html"><i class="bi bi-droplet-half me-1"></i>Příprava</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="pridat.html"><i class="bi bi-plus-circle me-1"></i>Přidat kávu</a></li>
+          <li class="nav-item"><a class="nav-link" href="o-projektu.html"><i class="bi bi-info-circle me-1"></i>O projektu</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="display-6">Přidat kávu</h1>
+      <p class="lead mb-0">Ochutnali jste kávu, která v databázi chybí? Vyplňte formulář.</p>
+    </div>
+  </header>
+
+  <!-- Drobečková navigace -->
+  <div class="breadcrumb-wrap">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-door me-1"></i>Úvod</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Přidat kávu</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-8">
+          <form id="coffeeForm" class="needs-validation" novalidate>
+
+            <!-- Základní údaje -->
+            <h2 class="form-section-title"><i class="bi bi-1-circle me-2 text-caramel"></i>Základní údaje</h2>
+            <div class="row g-3 mb-4">
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="coffeeName" name="nazev" placeholder="Název kávy" required minlength="3">
+                  <label for="coffeeName">Název kávy *</label>
+                  <div class="invalid-feedback">Zadejte název kávy (alespoň 3 znaky).</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="roaster" class="form-label">Pražírna *</label>
+                <select class="form-select" id="roaster" name="prazirna" required>
+                  <option value="" selected disabled>Vyberte pražírnu…</option>
+                  <option>Pražírna Vltava</option>
+                  <option>Zrno &amp; Plamen</option>
+                  <option>Kafemlýn</option>
+                  <option>Severka Coffee</option>
+                  <option>Pražírna Pod Hradem</option>
+                  <option>Hanácké zrno</option>
+                  <option>Ostravský pražič</option>
+                  <option>Krkonošská pražírna</option>
+                  <option>Moravská kávová dílna</option>
+                  <option>Pražírna Na Mlýně</option>
+                  <option value="jina">Jiná pražírna</option>
+                </select>
+                <div class="invalid-feedback">Vyberte pražírnu.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="country" class="form-label">Země původu *</label>
+                <select class="form-select" id="country" name="zeme" required>
+                  <option value="" selected disabled>Vyberte zemi…</option>
+                  <optgroup label="Afrika">
+                    <option>Etiopie</option>
+                    <option>Keňa</option>
+                    <option>Rwanda</option>
+                    <option>Burundi</option>
+                    <option>Uganda</option>
+                  </optgroup>
+                  <optgroup label="Jižní Amerika">
+                    <option>Kolumbie</option>
+                    <option>Brazílie</option>
+                    <option>Peru</option>
+                    <option>Ekvádor</option>
+                  </optgroup>
+                  <optgroup label="Střední Amerika">
+                    <option>Guatemala</option>
+                    <option>Honduras</option>
+                    <option>Kostarika</option>
+                    <option>Panama</option>
+                  </optgroup>
+                  <optgroup label="Asie">
+                    <option>Indonésie</option>
+                    <option>Indie</option>
+                    <option>Jemen</option>
+                  </optgroup>
+                  <option value="smes">Směs více zemí</option>
+                </select>
+                <div class="invalid-feedback">Vyberte zemi původu.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="region" class="form-label">Region / farma</label>
+                <input type="text" class="form-control" id="region" name="region" placeholder="např. Huila, Finca El Mirador">
+              </div>
+              <div class="col-md-6">
+                <label for="variety" class="form-label">Odrůda</label>
+                <input type="text" class="form-control" id="variety" name="odruda" list="varietyList" placeholder="Začněte psát…">
+                <datalist id="varietyList">
+                  <option value="Bourbon"></option>
+                  <option value="Caturra"></option>
+                  <option value="Gesha"></option>
+                  <option value="Heirloom"></option>
+                  <option value="Pacamara"></option>
+                  <option value="SL28"></option>
+                  <option value="Typica"></option>
+                </datalist>
+              </div>
+              <div class="col-md-6">
+                <label for="altitude" class="form-label">Nadmořská výška</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-triangle"></i></span>
+                  <input type="number" class="form-control" id="altitude" name="vyska" min="0" max="3000" placeholder="1800">
+                  <span class="input-group-text">m n. m.</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="roastDate" class="form-label">Datum pražení</label>
+                <input type="date" class="form-control" id="roastDate" name="datum">
+              </div>
+            </div>
+
+            <!-- Zpracování a pražení -->
+            <h2 class="form-section-title"><i class="bi bi-2-circle me-2 text-caramel"></i>Zpracování a pražení</h2>
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <span class="form-label d-block">Způsob zpracování *</span>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="zpracovani" id="procWashed" value="Praná" required>
+                  <label class="form-check-label" for="procWashed">Praná (washed)</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="zpracovani" id="procNatural" value="Přírodní">
+                  <label class="form-check-label" for="procNatural">Přírodní (natural)</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="zpracovani" id="procHoney" value="Honey">
+                  <label class="form-check-label" for="procHoney">Honey</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="zpracovani" id="procAnaerobic" value="Anaerobní">
+                  <label class="form-check-label" for="procAnaerobic">Anaerobní fermentace</label>
+                  <div class="invalid-feedback">Vyberte způsob zpracování.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <span class="form-label d-block">Profil pražení *</span>
+                <div class="btn-group w-100" role="group" aria-label="Profil pražení">
+                  <input type="radio" class="btn-check" name="prazeni" id="roastF" value="Filtr" required>
+                  <label class="btn btn-outline-coffee" for="roastF">Filtr</label>
+                  <input type="radio" class="btn-check" name="prazeni" id="roastE" value="Espresso">
+                  <label class="btn btn-outline-coffee" for="roastE">Espresso</label>
+                  <input type="radio" class="btn-check" name="prazeni" id="roastO" value="Omni">
+                  <label class="btn btn-outline-coffee" for="roastO">Omni</label>
+                </div>
+                <div class="form-text" id="roastHelp">Omni = pražení vhodné pro filtr i espresso.</div>
+
+                <label for="sca" class="form-label mt-3">SCA skóre</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-award"></i></span>
+                  <input type="number" class="form-control" id="sca" name="sca" min="80" max="100" step="0.25" placeholder="86,5">
+                  <span class="input-group-text">bodů</span>
+                  <div class="invalid-feedback">Výběrová káva má skóre 80–100 bodů.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chuť a hodnocení -->
+            <h2 class="form-section-title"><i class="bi bi-3-circle me-2 text-caramel"></i>Chuť a hodnocení</h2>
+            <div class="row g-3 mb-4">
+              <div class="col-12">
+                <span class="form-label d-block">Chuťové tóny</span>
+                <div class="row row-cols-2 row-cols-sm-4 g-2">
+                  <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="tony" id="noteChoc" value="čokoláda"><label class="form-check-label" for="noteChoc">Čokoláda</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="tony" id="noteNut" value="ořechy"><label class="form-check-label" for="noteNut">Ořechy</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="tony" id="noteCaramel" value="karamel"><label class="form-check-label" for="noteCaramel">Karamel</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="tony" id="noteBerry" value="lesní ovoce"><label class="form-check-label" for="noteBerry">Lesní ovoce</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="tony" id="noteCitrus" value="citrusy"><label class="form-check-label" for="noteCitrus">Citrusy</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="tony" id="noteFloral" value="květiny"><label class="form-check-label" for="noteFloral">Květiny</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="tony" id="noteTropical" value="tropické ovoce"><label class="form-check-label" for="noteTropical">Tropické ovoce</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" type="checkbox" name="tony" id="noteSpice" value="koření"><label class="form-check-label" for="noteSpice">Koření</label></div></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="rating" class="form-label">Moje hodnocení: <strong id="ratingValue">4</strong> / 5 <i class="bi bi-star-fill text-warning"></i></label>
+                <input type="range" class="form-range" id="rating" name="hodnoceni" min="1" max="5" step="1" value="4">
+              </div>
+              <div class="col-md-6">
+                <label for="brewMethod" class="form-label">Nejlépe mi chutnala jako</label>
+                <select class="form-select" id="brewMethod" name="metoda">
+                  <option value="">— nevybráno —</option>
+                  <option>V60 / pour-over</option>
+                  <option>AeroPress</option>
+                  <option>French press</option>
+                  <option>Espresso</option>
+                  <option>Cappuccino / flat white</option>
+                  <option>Moka konvička</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="review" class="form-label">Recenze *</label>
+                <textarea class="form-control" id="review" name="recenze" rows="5" required minlength="20" maxlength="600" placeholder="Jak káva chutnala? Jaká byla kyselinka, sladkost a tělo?" aria-describedby="reviewHelp"></textarea>
+                <div class="d-flex justify-content-between">
+                  <div class="form-text" id="reviewHelp">Minimálně 20 znaků.</div>
+                  <div class="form-text"><span id="reviewCount">0</span> / 600</div>
+                </div>
+                <div class="invalid-feedback">Napište recenzi o délce alespoň 20 znaků.</div>
+              </div>
+            </div>
+
+            <!-- Cena a autor -->
+            <h2 class="form-section-title"><i class="bi bi-4-circle me-2 text-caramel"></i>Cena a kontakt</h2>
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <label for="price" class="form-label">Cena balení *</label>
+                <div class="input-group has-validation">
+                  <input type="number" class="form-control" id="price" name="cena" min="1" placeholder="390" required>
+                  <span class="input-group-text">Kč za</span>
+                  <select class="form-select flex-grow-0 w-auto" id="weight" name="hmotnost" aria-label="Hmotnost balení">
+                    <option value="250" selected>250 g</option>
+                    <option value="500">500 g</option>
+                    <option value="1000">1 kg</option>
+                  </select>
+                  <div class="invalid-feedback">Zadejte cenu balení.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="shopUrl" class="form-label">Odkaz na e-shop</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-link-45deg"></i></span>
+                  <input type="url" class="form-control" id="shopUrl" name="url" placeholder="https://www.prazirna.cz/kava">
+                  <div class="invalid-feedback">Zadejte platnou adresu začínající https://</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="authorName" class="form-label">Vaše jméno *</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text"><i class="bi bi-person"></i></span>
+                  <input type="text" class="form-control" id="authorName" name="jmeno" placeholder="Jan Novák" required>
+                  <div class="invalid-feedback">Zadejte své jméno.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">E-mail *</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text">@</span>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="jan@email.cz" required>
+                  <div class="invalid-feedback">Zadejte platný e-mail.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="newsletter" name="newsletter" checked>
+                  <label class="form-check-label" for="newsletter">Chci dostávat novinky z pražíren e-mailem</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terms" name="souhlas" required>
+                  <label class="form-check-label" for="terms">Souhlasím se zveřejněním recenze v databázi coffeeBase *</label>
+                  <div class="invalid-feedback">Bez souhlasu nelze kávu uložit.</div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+            <div class="d-flex flex-wrap gap-2 justify-content-end">
+              <button type="reset" class="btn btn-outline-secondary"><i class="bi bi-arrow-counterclockwise me-1"></i>Vymazat</button>
+              <button type="submit" class="btn btn-coffee btn-lg px-4"><i class="bi bi-floppy me-2"></i>Uložit</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Postranní nápověda -->
+        <aside class="col-lg-4">
+          <div class="card border-0 bg-cream sticky-lg-top" style="top: 6rem;">
+            <div class="card-body">
+              <h2 class="h5"><i class="bi bi-question-circle me-2 text-caramel"></i>Jak vyplnit formulář</h2>
+              <p class="small">Pole označená hvězdičkou (*) jsou povinná. Ostatní údaje najdete obvykle na etiketě balíčku.</p>
+              <ul class="list-group list-group-flush small">
+                <li class="list-group-item bg-transparent px-0"><strong>Zpracování</strong> – jak byla zrna oddělena od plodu (praná, přírodní, honey…).</li>
+                <li class="list-group-item bg-transparent px-0"><strong>Profil pražení</strong> – pro jakou metodu přípravy je káva určena.</li>
+                <li class="list-group-item bg-transparent px-0"><strong>SCA skóre</strong> – bodové hodnocení kvality, pokud ho pražírna uvádí.</li>
+                <li class="list-group-item bg-transparent px-0"><strong>Chuťové tóny</strong> – vyberte, co jste v šálku cítili vy.</li>
+              </ul>
+              <a href="o-projektu.html#slovnicek" class="btn btn-sm btn-outline-coffee mt-2"><i class="bi bi-book me-1"></i>Kávový slovníček</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast po uložení -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="saveToast" class="toast text-bg-success border-0" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body"><i class="bi bi-check-circle me-2"></i>Káva <strong id="saveToastName"></strong> byla uložena. Děkujeme!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Zavřít"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Patička -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <a class="brand-logo text-decoration-none" href="index.html"><span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>coffee<span class="brand-accent">Base</span></a>
+          <p class="mt-3 small">Databáze výběrových káv z lokálních českých pražíren. Semestrální projekt vytvořený pomocí frameworku Bootstrap 5.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Navigace</h5>
+          <ul class="list-unstyled small">
+            <li><a href="kavy.html">Databáze káv</a></li>
+            <li><a href="prazirny.html">Pražírny</a></li>
+            <li><a href="priprava.html">Příprava kávy</a></li>
+            <li><a href="pridat.html">Přidat kávu</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Sledujte nás</h5>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="small mb-0">&copy; 2026 coffeeBase · Fotografie: Unsplash</p>
+    </div>
+  </footer>
+
+  <button type="button" class="btn btn-coffee rounded-circle back-to-top" aria-label="Zpět nahoru"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+  <script src="js/formular.js"></script>
+</body>
+</html>

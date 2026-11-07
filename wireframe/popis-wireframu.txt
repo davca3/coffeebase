@@ -1,0 +1,64 @@
+coffeeBase – popis wireframu úvodní stránky (mobilní zobrazení)
+===============================================================
+
+Wireframe (soubory wireframe-mobil.png / wireframe-mobil.svg) zobrazuje úvodní
+stránku index.html na typickém smartphonu o šířce 375 px. Na mobilu jsou všechny
+sekce řazeny pod sebou v jednom sloupci; vícesloupcové části z desktopu
+(statistiky, kroky, karty) se díky mřížce Bootstrapu (row / col-*) skládají
+vertikálně. Čísla v oranžových kolečkách odpovídají bodům níže.
+
+ 1. Navigační lišta (Navbar)
+    Tmavá lišta přilepená k hornímu okraji (sticky-top). Vlevo logo – ikona
+    šálku v kolečku a stylizovaný název „coffeeBase“. Vpravo tlačítko
+    „hamburger“, které na mobilu rozbalí menu se 6 položkami s ikonami
+    (Úvod, Kávy, Pražírny, Příprava, Přidat kávu, O projektu).
+
+ 2. Carousel
+    Hned pod menu – 4 automaticky se střídající fotografie přes celou šířku
+    displeje. Přes každou fotografii je textová zpráva: štítek (badge),
+    nadpis, krátký popis a tlačítko odkazující na příslušnou podstránku.
+    Ovládání šipkami vlevo/vpravo a indikátory snímků dole.
+
+ 3. Drobečková navigace (Breadcrumb)
+    Světlý pruh s aktuální pozicí v rámci webu („Úvod“). Na podstránkách má
+    podobu „Úvod / Název stránky“.
+
+ 4. Úvodní text a hlavní tlačítka
+    Nadpis „Vítejte v coffeeBase“, perex a odstavec vysvětlující pojem
+    výběrová káva. Pod ním tlačítka různých stylů: plné (Prozkoumat kávy),
+    obrysové (Přidat kávu) a textový odkaz (btn-link). Na mobilu se tlačítka
+    zalamují pod sebe.
+
+ 5. Statistiky
+    Tři menší boxy v jedné řadě (60 káv, 10 pražíren, 24 zemí) a pod nimi
+    tmavý box přes celou šířku s informací o hodnocení SCA 80+.
+
+ 6. Jak coffeeBase funguje
+    Sekce se světlým pozadím a třemi kroky (Hledejte – Vyberte – Sdílejte).
+    Každý krok má ikonu, nadpis a krátký text; na mobilu jsou kroky pod
+    sebou, na desktopu vedle sebe.
+
+ 7. Káva měsíce (karta + modální okno)
+    Horizontální karta, která se na mobilu přeskládá: nahoře fotografie,
+    pod ní štítek, název kávy, pražírna, popis a chuťové tóny (badges).
+    Tlačítko „Zobrazit detail“ otevře modální okno s podrobnými informacemi
+    (tabulka parametrů, ukazatele chuti, tip na přípravu). Druhé tlačítko
+    vede do databáze na kávy dané pražírny.
+
+ 8. Tipy redakce
+    Nadpis s malým tlačítkem „Všechny kávy“ a tři karty kávy pod sebou.
+    Každá karta obsahuje fotografii, štítek profilu pražení, název, pražírnu,
+    popis a patičku s cenou a SCA skóre (s tooltipem).
+
+ 9. Newsletter
+    Tmavá sekce s nadpisem, krátkým textem a skupinou vstupu (input group):
+    ikona @, pole pro e-mail a tlačítko „Odebírat“. Po odeslání se zobrazí
+    potvrzovací toast.
+
+10. Patička (Footer)
+    Logo, krátký popis projektu, sloupec s odkazy na hlavní stránky,
+    tlačítka sociálních sítí a řádek s copyrightem.
+
+11. Tlačítko „Zpět nahoru“
+    Kulaté plovoucí tlačítko v pravém dolním rohu (pevná pozice). Objeví se
+    po odscrollování o více než 400 px a plynule vrátí stránku na začátek.

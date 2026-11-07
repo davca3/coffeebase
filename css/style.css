@@ -1,0 +1,294 @@
+/* coffeeBase – vlastní styly nad Bootstrapem 5 */
+
+:root {
+  --cb-espresso: #2b1a12;
+  --cb-coffee: #6f4e37;
+  --cb-caramel: #c8873a;
+  --cb-caramel-dark: #a86c26;
+  --cb-cream: #f7f1e8;
+  --cb-milk: #fffaf3;
+
+  --bs-body-font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bs-body-bg: var(--cb-milk);
+  --bs-body-color: #2f2622;
+  --bs-link-color-rgb: 168, 108, 38;
+  --bs-link-hover-color-rgb: 111, 78, 55;
+}
+
+h1, h2, h3, h4, h5, .display-font {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  color: var(--cb-espresso);
+}
+
+/* ---------- Logo a navigace ---------- */
+.navbar-coffee {
+  background-color: var(--cb-espresso);
+}
+
+.navbar-coffee .nav-link {
+  color: rgba(255, 255, 255, .78);
+  font-weight: 500;
+}
+
+.navbar-coffee .nav-link:hover,
+.navbar-coffee .nav-link:focus {
+  color: #fff;
+}
+
+.navbar-coffee .nav-link.active {
+  color: var(--cb-caramel);
+}
+
+.brand-logo {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -.02em;
+}
+
+.brand-logo:hover { color: #fff; }
+
+.brand-logo .brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--cb-caramel);
+  color: var(--cb-espresso);
+  font-size: 1.1rem;
+  margin-right: .4rem;
+  vertical-align: middle;
+}
+
+.brand-logo .brand-accent { color: var(--cb-caramel); }
+
+/* ---------- Tlačítka v barvách projektu ---------- */
+.btn-coffee {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--cb-caramel);
+  --bs-btn-border-color: var(--cb-caramel);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--cb-caramel-dark);
+  --bs-btn-hover-border-color: var(--cb-caramel-dark);
+  --bs-btn-active-bg: var(--cb-caramel-dark);
+  --bs-btn-active-border-color: var(--cb-caramel-dark);
+  --bs-btn-focus-shadow-rgb: 200, 135, 58;
+}
+
+.btn-outline-coffee {
+  --bs-btn-color: var(--cb-coffee);
+  --bs-btn-border-color: var(--cb-coffee);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--cb-coffee);
+  --bs-btn-hover-border-color: var(--cb-coffee);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--cb-coffee);
+  --bs-btn-active-border-color: var(--cb-coffee);
+  --bs-btn-focus-shadow-rgb: 111, 78, 55;
+}
+
+.btn-link {
+  --bs-btn-color: var(--cb-caramel-dark);
+  --bs-btn-hover-color: var(--cb-coffee);
+}
+
+.text-caramel { color: var(--cb-caramel) !important; }
+.bg-cream { background-color: var(--cb-cream) !important; }
+.bg-espresso { background-color: var(--cb-espresso) !important; }
+
+/* ---------- Carousel ---------- */
+.hero-carousel .carousel-item img {
+  height: 520px;
+  object-fit: cover;
+  filter: brightness(.55);
+}
+
+.hero-carousel .carousel-caption {
+  bottom: 18%;
+  text-align: left;
+  left: 10%;
+  right: 10%;
+}
+
+.hero-carousel .carousel-caption h2 {
+  color: #fff;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+}
+
+.hero-carousel .carousel-caption p {
+  max-width: 34rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 767.98px) {
+  .hero-carousel .carousel-item img { height: 360px; }
+  .hero-carousel .carousel-caption { bottom: 12%; left: 8%; right: 8%; }
+  .hero-carousel .carousel-caption p { font-size: .95rem; }
+}
+
+/* ---------- Záhlaví podstránek ---------- */
+.page-header {
+  background:
+    linear-gradient(rgba(43, 26, 18, .82), rgba(43, 26, 18, .82)),
+    url("../img/slide-zrna.jpg") center / cover;
+  color: #fff;
+  padding: 3rem 0 2.5rem;
+}
+
+.page-header h1 { color: #fff; }
+.page-header .lead { color: rgba(255, 255, 255, .8); }
+
+.breadcrumb-wrap {
+  background: var(--cb-cream);
+  border-bottom: 1px solid rgba(111, 78, 55, .15);
+}
+
+.breadcrumb { margin: 0; padding: .75rem 0; }
+.breadcrumb a { text-decoration: none; }
+
+/* ---------- Karty a obsah ---------- */
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 .25rem .75rem rgba(43, 26, 18, .08);
+  color: var(--cb-caramel);
+  font-size: 1.6rem;
+}
+
+.card-coffee {
+  border: 1px solid rgba(111, 78, 55, .12);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card-coffee:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 .75rem 1.5rem rgba(43, 26, 18, .12);
+}
+
+.card-coffee .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.stat-number {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--cb-caramel);
+  line-height: 1;
+}
+
+.note-badge {
+  background: var(--cb-cream);
+  color: var(--cb-coffee);
+  border: 1px solid rgba(111, 78, 55, .2);
+  font-weight: 500;
+}
+
+.roaster-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--cb-espresso);
+  color: var(--cb-caramel);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* ---------- Záložky (Příprava) ---------- */
+.nav-tabs .nav-link { color: var(--cb-coffee); font-weight: 500; }
+.nav-tabs .nav-link.active { color: var(--cb-espresso); }
+
+@media (max-width: 575.98px) {
+  .nav-tabs .nav-link { padding: .5rem .35rem; font-size: .85rem; }
+}
+
+.recipe-step {
+  counter-increment: step;
+  position: relative;
+  padding-left: 2.75rem;
+  margin-bottom: 1rem;
+}
+
+.recipe-step::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--cb-caramel);
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-steps { counter-reset: step; list-style: none; padding: 0; }
+
+/* ---------- DataTable ---------- */
+#coffeeTable td { vertical-align: middle; }
+
+.sca-score {
+  font-weight: 600;
+  color: var(--cb-coffee);
+}
+
+/* ---------- Formulář ---------- */
+.form-section-title {
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--cb-cream);
+  padding-bottom: .5rem;
+  margin-bottom: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: var(--cb-caramel);
+  box-shadow: 0 0 0 .25rem rgba(200, 135, 58, .25);
+}
+
+.form-check-input:checked {
+  background-color: var(--cb-caramel);
+  border-color: var(--cb-caramel);
+}
+
+.form-range::-webkit-slider-thumb { background: var(--cb-caramel); }
+.form-range::-moz-range-thumb { background: var(--cb-caramel); }
+
+/* ---------- Patička ---------- */
+.site-footer {
+  background: var(--cb-espresso);
+  color: rgba(255, 255, 255, .7);
+}
+
+.site-footer h5 { color: #fff; font-size: 1rem; }
+.site-footer a { color: rgba(255, 255, 255, .7); text-decoration: none; }
+.site-footer a:hover { color: var(--cb-caramel); }
+
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1030;
+  display: none;
+}
+
+.back-to-top.show { display: inline-flex; }

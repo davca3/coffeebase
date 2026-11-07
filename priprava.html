@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Příprava kávy – coffeeBase</title>
+  <meta name="description" content="Recepty na přípravu výběrové kávy: V60, AeroPress, French press a espresso.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Logo a hlavní menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-coffee sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>coffee<span class="brand-accent">Base</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Přepnout navigaci">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Úvod</a></li>
+          <li class="nav-item"><a class="nav-link" href="kavy.html"><i class="bi bi-cup-hot me-1"></i>Kávy</a></li>
+          <li class="nav-item"><a class="nav-link" href="prazirny.html"><i class="bi bi-fire me-1"></i>Pražírny</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="priprava.html"><i class="bi bi-droplet-half me-1"></i>Příprava</a></li>
+          <li class="nav-item"><a class="nav-link" href="pridat.html"><i class="bi bi-plus-circle me-1"></i>Přidat kávu</a></li>
+          <li class="nav-item"><a class="nav-link" href="o-projektu.html"><i class="bi bi-info-circle me-1"></i>O projektu</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="display-6">Příprava kávy</h1>
+      <p class="lead mb-0">Osvědčené recepty pro nejoblíbenější metody přípravy.</p>
+    </div>
+  </header>
+
+  <!-- Drobečková navigace -->
+  <div class="breadcrumb-wrap">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-door me-1"></i>Úvod</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Příprava</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main class="py-5">
+    <div class="container">
+      <p class="lead mb-4">Výběrová káva si zaslouží pečlivou přípravu. Vyberte metodu a postupujte podle receptu – stačí váha, časovač a čerstvě namletá káva.</p>
+
+      <!-- Záložky s metodami přípravy -->
+      <ul class="nav nav-tabs flex-nowrap overflow-x-auto overflow-y-hidden" id="brewTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active text-nowrap" id="v60-tab" data-bs-toggle="tab" data-bs-target="#v60" type="button" role="tab" aria-controls="v60" aria-selected="true"><i class="bi bi-funnel me-1"></i>V60</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-nowrap" id="aeropress-tab" data-bs-toggle="tab" data-bs-target="#aeropress" type="button" role="tab" aria-controls="aeropress" aria-selected="false"><i class="bi bi-arrow-down-square me-1"></i>AeroPress</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-nowrap" id="frenchpress-tab" data-bs-toggle="tab" data-bs-target="#frenchpress" type="button" role="tab" aria-controls="frenchpress" aria-selected="false"><i class="bi bi-cup-straw me-1"></i>French press</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-nowrap" id="espresso-tab" data-bs-toggle="tab" data-bs-target="#espresso" type="button" role="tab" aria-controls="espresso" aria-selected="false"><i class="bi bi-cup-hot me-1"></i>Espresso</button>
+        </li>
+      </ul>
+
+      <div class="tab-content border border-top-0 rounded-bottom p-4 bg-white" id="brewTabsContent">
+
+        <!-- V60 -->
+        <div class="tab-pane fade show active" id="v60" role="tabpanel" aria-labelledby="v60-tab" tabindex="0">
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <h2 class="h4">Hario V60</h2>
+              <p>Kónický překapávač z Japonska. Dává čistý šálek, ve kterém vyniknou ovocné a květinové tóny světle pražených káv.</p>
+              <table class="table table-sm">
+                <tbody>
+                  <tr><th scope="row"><i class="bi bi-bag me-1"></i>Káva</th><td>15 g</td></tr>
+                  <tr><th scope="row"><i class="bi bi-droplet me-1"></i>Voda</th><td>250 g</td></tr>
+                  <tr><th scope="row"><i class="bi bi-thermometer-half me-1"></i>Teplota</th><td>93–96 °C</td></tr>
+                  <tr><th scope="row"><i class="bi bi-gear me-1"></i>Mletí</th><td>středně jemné</td></tr>
+                  <tr><th scope="row"><i class="bi bi-stopwatch me-1"></i>Čas</th><td>2:30–3:00</td></tr>
+                </tbody>
+              </table>
+              <span class="badge text-bg-success">Obtížnost: střední</span>
+            </div>
+            <div class="col-lg-8">
+              <h3 class="h5 mb-3">Postup</h3>
+              <ol class="recipe-steps">
+                <li class="recipe-step">Vložte papírový filtr do V60 a propláchněte ho horkou vodou. Vodu z nádoby vylijte.</li>
+                <li class="recipe-step">Nasypte namletou kávu, lehce ji urovnejte a uprostřed udělejte malý důlek.</li>
+                <li class="recipe-step"><strong>Pre-infuze (bloom):</strong> zalijte 40 g vody a nechte 30–45 s odplynit.</li>
+                <li class="recipe-step">Pomalými krouživými pohyby dolévejte do 150 g (čas cca 1:15).</li>
+                <li class="recipe-step">Dolijte do 250 g (čas cca 1:45), jemně zatočte překapávačem a nechte vše protéct.</li>
+              </ol>
+              <div class="alert alert-info mb-0"><i class="bi bi-lightbulb me-2"></i>Protéká káva příliš rychle a chutná kysele? Melte jemněji. Je hořká a svíravá? Melte hruběji.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AeroPress -->
+        <div class="tab-pane fade" id="aeropress" role="tabpanel" aria-labelledby="aeropress-tab" tabindex="0">
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <h2 class="h4">AeroPress</h2>
+              <p>Odolná plastová „stříkačka“, se kterou připravíte kávu doma, v kanceláři i na cestách. Odpouští chyby a je skvělá pro začátečníky.</p>
+              <table class="table table-sm">
+                <tbody>
+                  <tr><th scope="row"><i class="bi bi-bag me-1"></i>Káva</th><td>15 g</td></tr>
+                  <tr><th scope="row"><i class="bi bi-droplet me-1"></i>Voda</th><td>230 g</td></tr>
+                  <tr><th scope="row"><i class="bi bi-thermometer-half me-1"></i>Teplota</th><td>85–90 °C</td></tr>
+                  <tr><th scope="row"><i class="bi bi-gear me-1"></i>Mletí</th><td>středně jemné</td></tr>
+                  <tr><th scope="row"><i class="bi bi-stopwatch me-1"></i>Čas</th><td>2:00</td></tr>
+                </tbody>
+              </table>
+              <span class="badge text-bg-success">Obtížnost: snadná</span>
+            </div>
+            <div class="col-lg-8">
+              <h3 class="h5 mb-3">Postup</h3>
+              <ol class="recipe-steps">
+                <li class="recipe-step">Vložte papírový filtr do sítka, propláchněte ho a sítko našroubujte na válec.</li>
+                <li class="recipe-step">Postavte AeroPress na hrnek a nasypte namletou kávu.</li>
+                <li class="recipe-step">Zalijte 230 g vody a 10 s míchejte.</li>
+                <li class="recipe-step">Nasaďte píst asi 1 cm do válce (vytvoří podtlak, káva nekape) a nechte louhovat do 1:30.</li>
+                <li class="recipe-step">Pomalu a rovnoměrně protlačte píst – mělo by to trvat asi 30 s.</li>
+              </ol>
+              <div class="alert alert-info mb-0"><i class="bi bi-lightbulb me-2"></i>Chcete silnější nápoj? Použijte 18 g kávy a výsledek nařeďte horkou vodou podle chuti.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- French press -->
+        <div class="tab-pane fade" id="frenchpress" role="tabpanel" aria-labelledby="frenchpress-tab" tabindex="0">
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <h2 class="h4">French press</h2>
+              <p>Klasická konvička s pístem a kovovým sítkem. Káva má plné tělo a sametovou texturu, protože kovové sítko propustí kávové oleje.</p>
+              <table class="table table-sm">
+                <tbody>
+                  <tr><th scope="row"><i class="bi bi-bag me-1"></i>Káva</th><td>30 g</td></tr>
+                  <tr><th scope="row"><i class="bi bi-droplet me-1"></i>Voda</th><td>500 g</td></tr>
+                  <tr><th scope="row"><i class="bi bi-thermometer-half me-1"></i>Teplota</th><td>94 °C</td></tr>
+                  <tr><th scope="row"><i class="bi bi-gear me-1"></i>Mletí</th><td>hrubé</td></tr>
+                  <tr><th scope="row"><i class="bi bi-stopwatch me-1"></i>Čas</th><td>4:00 + 5:00</td></tr>
+                </tbody>
+              </table>
+              <span class="badge text-bg-success">Obtížnost: snadná</span>
+            </div>
+            <div class="col-lg-8">
+              <h3 class="h5 mb-3">Postup</h3>
+              <ol class="recipe-steps">
+                <li class="recipe-step">Nasypte hrubě namletou kávu do konvičky a zalijte ji 500 g vody.</li>
+                <li class="recipe-step">Nechte 4 minuty louhovat bez míchání.</li>
+                <li class="recipe-step">Lžící rozbijte krustu na hladině a seberte pěnu i plovoucí částice.</li>
+                <li class="recipe-step">Počkejte dalších 5 minut, aby jemné částice klesly ke dnu.</li>
+                <li class="recipe-step">Píst jen lehce stlačte k hladině (ne až dolů) a pomalu nalévejte.</li>
+              </ol>
+              <div class="alert alert-info mb-0"><i class="bi bi-lightbulb me-2"></i>Delší čekání po rozbití krusty dá čistší šálek s menším množstvím kalu.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Espresso -->
+        <div class="tab-pane fade" id="espresso" role="tabpanel" aria-labelledby="espresso-tab" tabindex="0">
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <h2 class="h4">Espresso</h2>
+              <p>Koncentrovaný nápoj připravený tlakem kolem 9 barů. Základ pro cappuccino, flat white i latte. Vyžaduje kvalitní mlýnek a trpělivost.</p>
+              <table class="table table-sm">
+                <tbody>
+                  <tr><th scope="row"><i class="bi bi-bag me-1"></i>Káva</th><td>18 g</td></tr>
+                  <tr><th scope="row"><i class="bi bi-droplet me-1"></i>Nápoj</th><td>36 g</td></tr>
+                  <tr><th scope="row"><i class="bi bi-thermometer-half me-1"></i>Teplota</th><td>93 °C</td></tr>
+                  <tr><th scope="row"><i class="bi bi-gear me-1"></i>Mletí</th><td>jemné</td></tr>
+                  <tr><th scope="row"><i class="bi bi-stopwatch me-1"></i>Čas</th><td>25–30 s</td></tr>
+                </tbody>
+              </table>
+              <span class="badge text-bg-danger">Obtížnost: náročná</span>
+            </div>
+            <div class="col-lg-8">
+              <h3 class="h5 mb-3">Postup</h3>
+              <ol class="recipe-steps">
+                <li class="recipe-step">Nahřejte kávovar i páku a před přípravou propláchněte spařovací hlavu.</li>
+                <li class="recipe-step">Nasypte 18 g čerstvě namleté kávy do suchého sítka.</li>
+                <li class="recipe-step">Kávu rovnoměrně rozprostřete a pevně a rovně utlačte tamperem.</li>
+                <li class="recipe-step">Nasaďte páku, spusťte extrakci a postavte šálek na váhu.</li>
+                <li class="recipe-step">Zastavte při 36 g nápoje. Trvalo to výrazně méně než 25 s? Melte jemněji.</li>
+              </ol>
+              <div class="alert alert-info mb-0"><i class="bi bi-lightbulb me-2"></i>Pro espresso volte kávy s profilem pražení <em>Espresso</em> nebo <em>Omni</em> – najdete je v <a href="kavy.html" class="alert-link">databázi káv</a>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kalkulačka poměru -->
+      <section class="mt-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <h2 class="h3">Kalkulačka poměru</h2>
+            <p class="text-body-secondary mb-0">Pro filtrovanou kávu se nejčastěji používá poměr 1:15 až 1:17. Zadejte množství vody a zjistěte, kolik kávy potřebujete.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="card border-0 bg-cream">
+              <div class="card-body">
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="calcWater" class="form-label">Množství vody</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-droplet"></i></span>
+                      <input type="number" class="form-control" id="calcWater" value="250" min="50" max="2000" step="10">
+                      <span class="input-group-text">g</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="calcRatio" class="form-label">Poměr</label>
+                    <select id="calcRatio" class="form-select">
+                      <option value="15">1:15 (silnější)</option>
+                      <option value="16" selected>1:16 (vyvážený)</option>
+                      <option value="17">1:17 (lehčí)</option>
+                    </select>
+                  </div>
+                </div>
+                <p class="mt-3 mb-0 fs-5">Potřebujete <strong class="text-caramel" id="calcResult">15,6 g</strong> kávy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Kalkulačka poměru kávy a vody
+    (() => {
+      const water = document.getElementById('calcWater');
+      const ratio = document.getElementById('calcRatio');
+      const result = document.getElementById('calcResult');
+      const update = () => {
+        const grams = (Number(water.value) || 0) / Number(ratio.value);
+        result.textContent = grams.toLocaleString('cs-CZ', { maximumFractionDigits: 1 }) + ' g';
+      };
+      water.addEventListener('input', update);
+      ratio.addEventListener('change', update);
+      update();
+    })();
+  </script>
+
+  <!-- Patička -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <a class="brand-logo text-decoration-none" href="index.html"><span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>coffee<span class="brand-accent">Base</span></a>
+          <p class="mt-3 small">Databáze výběrových káv z lokálních českých pražíren. Semestrální projekt vytvořený pomocí frameworku Bootstrap 5.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Navigace</h5>
+          <ul class="list-unstyled small">
+            <li><a href="kavy.html">Databáze káv</a></li>
+            <li><a href="prazirny.html">Pražírny</a></li>
+            <li><a href="priprava.html">Příprava kávy</a></li>
+            <li><a href="pridat.html">Přidat kávu</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Sledujte nás</h5>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="small mb-0">&copy; 2026 coffeeBase · Fotografie: Unsplash</p>
+    </div>
+  </footer>
+
+  <button type="button" class="btn btn-coffee rounded-circle back-to-top" aria-label="Zpět nahoru"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

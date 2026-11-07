@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Databáze káv – coffeeBase</title>
+  <meta name="description" content="Prohledávejte 60 výběrových káv z českých pražíren podle původu, zpracování, pražení a ceny.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
+  <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" rel="stylesheet" integrity="sha384-3ptzuE+Rcpo/oIGgcQ40Oz3iGZ2GxGeQ/RZEyYncPivDl3lFBCI4eiS7PZAghYuS" crossorigin="anonymous">
+  <link href="https://cdn.datatables.net/responsive/3.0.3/css/responsive.bootstrap5.min.css" rel="stylesheet" integrity="sha384-seyUnB//1QOFEqox9uI7YTLBgz9jBwFRqZvsEPFrTw6NAsFEo70nhBWsQfODqiYA" crossorigin="anonymous">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Logo a hlavní menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-coffee sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>coffee<span class="brand-accent">Base</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Přepnout navigaci">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Úvod</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="kavy.html"><i class="bi bi-cup-hot me-1"></i>Kávy</a></li>
+          <li class="nav-item"><a class="nav-link" href="prazirny.html"><i class="bi bi-fire me-1"></i>Pražírny</a></li>
+          <li class="nav-item"><a class="nav-link" href="priprava.html"><i class="bi bi-droplet-half me-1"></i>Příprava</a></li>
+          <li class="nav-item"><a class="nav-link" href="pridat.html"><i class="bi bi-plus-circle me-1"></i>Přidat kávu</a></li>
+          <li class="nav-item"><a class="nav-link" href="o-projektu.html"><i class="bi bi-info-circle me-1"></i>O projektu</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="display-6">Databáze káv</h1>
+      <p class="lead mb-0">60 výběrových káv od 10 českých pražíren. Řaďte, hledejte a porovnávejte.</p>
+    </div>
+  </header>
+
+  <!-- Drobečková navigace -->
+  <div class="breadcrumb-wrap">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-door me-1"></i>Úvod</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Kávy</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main class="py-5">
+    <div class="container">
+
+      <div id="roasterFilterAlert" class="alert alert-info d-flex flex-wrap align-items-center justify-content-between gap-2 d-none" role="status">
+        <span><i class="bi bi-funnel me-2"></i>Zobrazeny kávy pražírny <strong id="roasterFilterName"></strong></span>
+        <a href="kavy.html" class="btn btn-sm btn-outline-primary"><i class="bi bi-x-lg me-1"></i>Zrušit filtr</a>
+      </div>
+
+      <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+        <span class="fw-semibold"><i class="bi bi-sliders me-1"></i>Profil pražení:</span>
+        <div class="btn-group flex-wrap" role="group" aria-label="Filtr podle pražení">
+          <input type="radio" class="btn-check" name="roastFilter" id="roastAll" value="" checked>
+          <label class="btn btn-outline-coffee" for="roastAll">Vše</label>
+          <input type="radio" class="btn-check" name="roastFilter" id="roastFiltr" value="Filtr">
+          <label class="btn btn-outline-coffee" for="roastFiltr"><i class="bi bi-funnel me-1"></i>Filtr</label>
+          <input type="radio" class="btn-check" name="roastFilter" id="roastEspresso" value="Espresso">
+          <label class="btn btn-outline-coffee" for="roastEspresso"><i class="bi bi-cup me-1"></i>Espresso</label>
+          <input type="radio" class="btn-check" name="roastFilter" id="roastOmni" value="Omni">
+          <label class="btn btn-outline-coffee" for="roastOmni"><i class="bi bi-circle-half me-1"></i>Omni</label>
+        </div>
+        <a href="pridat.html" class="btn btn-coffee ms-md-auto"><i class="bi bi-plus-lg me-1"></i>Přidat kávu</a>
+      </div>
+
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <table id="coffeeTable" class="table table-striped table-hover w-100">
+            <thead>
+              <tr>
+                <th>Káva</th>
+                <th>Pražírna</th>
+                <th>Země</th>
+                <th>Zpracování</th>
+                <th>Pražení</th>
+                <th>SCA</th>
+                <th>Cena / 250 g</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+
+      <p class="small text-body-secondary mt-3 mb-0"><i class="bi bi-info-circle me-1"></i>Klikněte na tlačítko <i class="bi bi-eye"></i> pro zobrazení všech informací o kávě. Data mají ilustrativní charakter.</p>
+    </div>
+  </main>
+
+  <!-- Modal: detail kávy (plněn z js/kavy.js) -->
+  <div class="modal fade" id="coffeeModal" tabindex="-1" aria-labelledby="coffeeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title h4" id="coffeeModalLabel"></h2>
+            <div class="small text-body-secondary" id="coffeeModalRoaster"></div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zavřít"></button>
+        </div>
+        <div class="modal-body">
+          <p id="coffeeModalDesc" class="lead fs-6"></p>
+          <div class="mb-3" id="coffeeModalNotes"></div>
+          <table class="table table-sm">
+            <tbody id="coffeeModalTable"></tbody>
+          </table>
+          <div class="alert alert-warning d-flex align-items-start mb-0" role="alert">
+            <i class="bi bi-lightbulb me-2 fs-5"></i>
+            <div><strong>Doporučená příprava:</strong> <span id="coffeeModalBrew"></span></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="priprava.html" class="btn btn-outline-coffee"><i class="bi bi-droplet-half me-1"></i>Návody na přípravu</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Patička -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <a class="brand-logo text-decoration-none" href="index.html"><span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>coffee<span class="brand-accent">Base</span></a>
+          <p class="mt-3 small">Databáze výběrových káv z lokálních českých pražíren. Semestrální projekt vytvořený pomocí frameworku Bootstrap 5.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Navigace</h5>
+          <ul class="list-unstyled small">
+            <li><a href="kavy.html">Databáze káv</a></li>
+            <li><a href="prazirny.html">Pražírny</a></li>
+            <li><a href="priprava.html">Příprava kávy</a></li>
+            <li><a href="pridat.html">Přidat kávu</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Sledujte nás</h5>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="small mb-0">&copy; 2026 coffeeBase · Fotografie: Unsplash</p>
+    </div>
+  </footer>
+
+  <button type="button" class="btn btn-coffee rounded-circle back-to-top" aria-label="Zpět nahoru"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js" integrity="sha384-MgwUq0TVErv5Lkj/jIAgQpC+iUIqwhwXxJMfrZQVAOhr++1MR02yXH8aXdPc3fk0" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js" integrity="sha384-G85lmdZCo2WkHaZ8U1ZceHekzKcg37sFrs4St2+u/r2UtfvSDQmQrkMsEx4Cgv/W" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/responsive/3.0.3/js/dataTables.responsive.min.js" integrity="sha384-FK2V6NwNQJgRo1DLlp661Ln0PS7mrkdLRB+4vvBBnlq30SLGHPDHW5+Cl109IpcP" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/responsive/3.0.3/js/responsive.bootstrap5.min.js" integrity="sha384-kg2n/a10bBsRCaIeUrjwzhJm6/RSujqXCxCzZqZp4XEDYaiElhtrW9SoMWNNQ+v3" crossorigin="anonymous"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/kavy.js"></script>
+</body>
+</html>

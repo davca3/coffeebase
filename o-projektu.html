@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O projektu – coffeeBase</title>
+  <meta name="description" content="O projektu coffeeBase, co je výběrová káva a kávový slovníček.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Logo a hlavní menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-coffee sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>coffee<span class="brand-accent">Base</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Přepnout navigaci">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Úvod</a></li>
+          <li class="nav-item"><a class="nav-link" href="kavy.html"><i class="bi bi-cup-hot me-1"></i>Kávy</a></li>
+          <li class="nav-item"><a class="nav-link" href="prazirny.html"><i class="bi bi-fire me-1"></i>Pražírny</a></li>
+          <li class="nav-item"><a class="nav-link" href="priprava.html"><i class="bi bi-droplet-half me-1"></i>Příprava</a></li>
+          <li class="nav-item"><a class="nav-link" href="pridat.html"><i class="bi bi-plus-circle me-1"></i>Přidat kávu</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="o-projektu.html"><i class="bi bi-info-circle me-1"></i>O projektu</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="display-6">O projektu</h1>
+      <p class="lead mb-0">Kdo stojí za coffeeBase a proč databáze vznikla.</p>
+    </div>
+  </header>
+
+  <!-- Drobečková navigace -->
+  <div class="breadcrumb-wrap">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-door me-1"></i>Úvod</a></li>
+          <li class="breadcrumb-item active" aria-current="page">O projektu</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-7">
+          <h2 class="h3">Proč coffeeBase vznikla</h2>
+          <p>V Česku dnes působí desítky malých pražíren výběrové kávy. Každá má vlastní e-shop, jiný způsob popisu káv a jinou nabídku – porovnat je mezi sebou je proto zdlouhavé. coffeeBase sbírá informace o kávách na jedno místo a ve stejné struktuře, takže najdete etiopskou kávu na filtr do 400 Kč během pár vteřin.</p>
+          <p>Projekt vznikl jako semestrální práce. Je postavený na frameworku <strong>Bootstrap 5</strong>, ikonách <strong>Bootstrap Icons</strong> a knihovně <strong>DataTables</strong> pro interaktivní tabulku.</p>
+
+          <div class="alert alert-warning d-flex align-items-start" role="alert">
+            <i class="bi bi-exclamation-triangle me-2 fs-5"></i>
+            <div>Pražírny i jednotlivé kávy v databázi jsou <strong>smyšlené a mají ilustrativní charakter</strong>. Města, země původu, odrůdy a způsoby zpracování odpovídají realitě, konkrétní produkty a ceny však nikoli.</div>
+          </div>
+
+          <h2 class="h3 mt-5">Co je výběrová káva</h2>
+          <p>Výběrová (specialty) káva je arabika, která při profesionálním hodnocení (tzv. cuppingu) podle metodiky Specialty Coffee Association získá alespoň <strong>80 bodů ze 100</strong>. Hodnotí se vůně, chuť, dochuť, kyselost, tělo, vyváženost i čistota šálku. Kromě kvality je důležitá i dohledatelnost – u výběrové kávy obvykle víte, z jaké země, regionu a často i farmy pochází.</p>
+
+          <h2 class="h3 mt-5" id="slovnicek">Kávový slovníček</h2>
+          <div class="accordion accordion-flush border rounded" id="glossary">
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#g1" aria-expanded="false" aria-controls="g1">Praná káva (washed)</button></h3>
+              <div id="g1" class="accordion-collapse collapse" data-bs-parent="#glossary"><div class="accordion-body">Dužina se ze zrn odstraní ještě před sušením a zrna se fermentují a propírají ve vodě. Výsledkem je čistý šálek s výraznou kyselinkou.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#g2" aria-expanded="false" aria-controls="g2">Přírodní zpracování (natural)</button></h3>
+              <div id="g2" class="accordion-collapse collapse" data-bs-parent="#glossary"><div class="accordion-body">Celé kávové třešně se suší na slunci i s dužinou. Káva bývá sladší, ovocnější a má plnější tělo.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#g3" aria-expanded="false" aria-controls="g3">Honey</button></h3>
+              <div id="g3" class="accordion-collapse collapse" data-bs-parent="#glossary"><div class="accordion-body">Kompromis mezi pranou a přírodní metodou – slupka se odstraní, ale část lepkavého slizu (mucilage) zůstane na zrnu během sušení.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#g4" aria-expanded="false" aria-controls="g4">Omni pražení</button></h3>
+              <div id="g4" class="accordion-collapse collapse" data-bs-parent="#glossary"><div class="accordion-body">Univerzální profil pražení, který funguje pro espresso i pro filtrovanou kávu.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#g5" aria-expanded="false" aria-controls="g5">Cupping</button></h3>
+              <div id="g5" class="accordion-collapse collapse" data-bs-parent="#glossary"><div class="accordion-body">Standardizovaná degustace kávy. Namletá káva se zalije horkou vodou, po 4 minutách se rozbije krusta a káva se ochutnává lžící.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body p-4">
+              <h2 class="h5 mb-3"><i class="bi bi-bootstrap me-2 text-caramel"></i>Použité komponenty</h2>
+              <ul class="list-group list-group-flush small">
+                <li class="list-group-item px-0 d-flex justify-content-between">Navbar s logem a ikonami <a href="index.html">Všechny stránky</a></li>
+                <li class="list-group-item px-0 d-flex justify-content-between">Carousel <a href="index.html">Úvod</a></li>
+                <li class="list-group-item px-0 d-flex justify-content-between">Breadcrumb <a href="kavy.html">Podstránky</a></li>
+                <li class="list-group-item px-0 d-flex justify-content-between">DataTable (60 záznamů) <a href="kavy.html">Kávy</a></li>
+                <li class="list-group-item px-0 d-flex justify-content-between">Modal <a href="kavy.html">Kávy, Úvod</a></li>
+                <li class="list-group-item px-0 d-flex justify-content-between">Navs &amp; tabs <a href="priprava.html">Příprava</a></li>
+                <li class="list-group-item px-0 d-flex justify-content-between">Formulář a input group <a href="pridat.html">Přidat kávu</a></li>
+                <li class="list-group-item px-0 d-flex justify-content-between">Accordion, cards, list group <a href="prazirny.html">Pražírny</a></li>
+                <li class="list-group-item px-0 d-flex justify-content-between">Toast, tooltip, progress, badge <a href="index.html">Úvod</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card border-0 bg-espresso text-white mb-4">
+            <div class="card-body p-4">
+              <h2 class="h5 text-white mb-3"><i class="bi bi-envelope me-2 text-caramel"></i>Kontakt</h2>
+              <p class="small text-white-50">Máte pražírnu a chcete být v databázi? Našli jste chybu? Napište nám.</p>
+              <p class="mb-2"><i class="bi bi-envelope-at me-2 text-caramel"></i>coffeebase@example.com</p>
+              <p class="mb-3"><i class="bi bi-geo-alt me-2 text-caramel"></i>Praha, Česká republika</p>
+              <a href="pridat.html" class="btn btn-coffee btn-sm"><i class="bi bi-plus-circle me-1"></i>Přidat kávu</a>
+              <a href="mailto:coffeebase@example.com" class="btn btn-outline-light btn-sm ms-1"><i class="bi bi-send me-1"></i>Napsat e-mail</a>
+            </div>
+          </div>
+
+          <h2 class="h5">Časté dotazy</h2>
+          <p class="d-flex flex-column gap-2">
+            <button class="btn btn-light text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1"><i class="bi bi-chevron-down me-2"></i>Prodáváte kávu?</button>
+          </p>
+          <div class="collapse" id="faq1"><div class="card card-body small mb-3">Ne. coffeeBase je pouze katalog – kávu kupujete přímo u pražíren.</div></div>
+          <p class="d-flex flex-column gap-2">
+            <button class="btn btn-light text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2"><i class="bi bi-chevron-down me-2"></i>Jak často se databáze aktualizuje?</button>
+          </p>
+          <div class="collapse" id="faq2"><div class="card card-body small mb-3">Pražírny mění nabídku podle sklizní, proto databázi procházíme jednou měsíčně.</div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Patička -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <a class="brand-logo text-decoration-none" href="index.html"><span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>coffee<span class="brand-accent">Base</span></a>
+          <p class="mt-3 small">Databáze výběrových káv z lokálních českých pražíren. Semestrální projekt vytvořený pomocí frameworku Bootstrap 5.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Navigace</h5>
+          <ul class="list-unstyled small">
+            <li><a href="kavy.html">Databáze káv</a></li>
+            <li><a href="prazirny.html">Pražírny</a></li>
+            <li><a href="priprava.html">Příprava kávy</a></li>
+            <li><a href="pridat.html">Přidat kávu</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Sledujte nás</h5>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="small mb-0">&copy; 2026 coffeeBase · Fotografie: Unsplash</p>
+    </div>
+  </footer>
+
+  <button type="button" class="btn btn-coffee rounded-circle back-to-top" aria-label="Zpět nahoru"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

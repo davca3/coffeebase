@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>coffeeBase – databáze výběrových káv z českých pražíren</title>
+  <meta name="description" content="coffeeBase je databáze výběrových káv z lokálních českých pražíren. Hledejte, porovnávejte a objevujte nové chutě.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Logo a hlavní menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-coffee sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>coffee<span class="brand-accent">Base</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Přepnout navigaci">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house-door me-1"></i>Úvod</a></li>
+          <li class="nav-item"><a class="nav-link" href="kavy.html"><i class="bi bi-cup-hot me-1"></i>Kávy</a></li>
+          <li class="nav-item"><a class="nav-link" href="prazirny.html"><i class="bi bi-fire me-1"></i>Pražírny</a></li>
+          <li class="nav-item"><a class="nav-link" href="priprava.html"><i class="bi bi-droplet-half me-1"></i>Příprava</a></li>
+          <li class="nav-item"><a class="nav-link" href="pridat.html"><i class="bi bi-plus-circle me-1"></i>Přidat kávu</a></li>
+          <li class="nav-item"><a class="nav-link" href="o-projektu.html"><i class="bi bi-info-circle me-1"></i>O projektu</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Snímek 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Snímek 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Snímek 3"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Snímek 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/slide-zrna.jpg" class="d-block w-100" alt="Čerstvě pražená kávová zrna">
+        <div class="carousel-caption">
+          <span class="badge text-bg-warning mb-2">60 káv · 10 pražíren</span>
+          <h2>Výběrová káva z českých pražíren</h2>
+          <p>Jedna databáze, ve které najdete kávy od malých lokálních pražičů z celé republiky.</p>
+          <a href="kavy.html" class="btn btn-coffee btn-lg"><i class="bi bi-search me-2"></i>Prohledat databázi</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/slide-pourover.jpg" class="d-block w-100" alt="Příprava kávy metodou pour-over">
+        <div class="carousel-caption">
+          <h2>Naučte se připravit dokonalý šálek</h2>
+          <p>Recepty pro V60, AeroPress, French press i espresso krok za krokem.</p>
+          <a href="priprava.html" class="btn btn-light btn-lg"><i class="bi bi-droplet-half me-2"></i>Návody na přípravu</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/slide-espresso.jpg" class="d-block w-100" alt="Páka espresso kávovaru s mletou kávou">
+        <div class="carousel-caption">
+          <h2>Poznejte lidi za pražením</h2>
+          <p>Od Liberce po Zlín – představujeme pražírny, které dávají kávě chuť.</p>
+          <a href="prazirny.html" class="btn btn-outline-light btn-lg"><i class="bi bi-fire me-2"></i>Seznam pražíren</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/slide-kavarna.jpg" class="d-block w-100" alt="Dva šálky kávy s latte art">
+        <div class="carousel-caption">
+          <h2>Pijete něco skvělého?</h2>
+          <p>Přidejte kávu do databáze a pomozte ostatním objevit nové chutě.</p>
+          <a href="pridat.html" class="btn btn-warning btn-lg"><i class="bi bi-plus-circle me-2"></i>Přidat kávu</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Předchozí</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Další</span>
+    </button>
+  </div>
+
+  <!-- Drobečková navigace -->
+  <div class="breadcrumb-wrap">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page"><i class="bi bi-house-door me-1"></i>Úvod</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <!-- Úvodní text -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-7">
+            <h1 class="display-5 mb-3">Vítejte v <span class="text-caramel">coffeeBase</span></h1>
+            <p class="lead">coffeeBase je otevřená databáze výběrových (specialty) káv z lokálních českých pražíren. Na jednom místě porovnáte původ, zpracování, chuťové tóny i cenu – a najdete kávu přesně podle svého gusta.</p>
+            <p>Výběrová káva je zrno, které při hodnocení podle metodiky SCA (Specialty Coffee Association) získá alespoň 80 bodů ze 100. Za každým takovým balíčkem stojí konkrétní farma, pečlivé zpracování a pražič, který z něj umí dostat to nejlepší.</p>
+            <div class="d-flex flex-wrap gap-2 mt-4">
+              <a href="kavy.html" class="btn btn-coffee btn-lg"><i class="bi bi-cup-hot me-2"></i>Prozkoumat kávy</a>
+              <a href="pridat.html" class="btn btn-outline-coffee btn-lg"><i class="bi bi-plus-lg me-2"></i>Přidat kávu</a>
+              <a href="o-projektu.html" class="btn btn-link btn-lg text-decoration-none">Co je specialty káva? <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="row g-3 text-center">
+              <div class="col-4 col-lg-6">
+                <div class="p-3 bg-cream rounded-4 h-100">
+                  <div class="stat-number">60</div>
+                  <div class="small text-body-secondary mt-1">káv v databázi</div>
+                </div>
+              </div>
+              <div class="col-4 col-lg-6">
+                <div class="p-3 bg-cream rounded-4 h-100">
+                  <div class="stat-number">10</div>
+                  <div class="small text-body-secondary mt-1">českých pražíren</div>
+                </div>
+              </div>
+              <div class="col-4 col-lg-6">
+                <div class="p-3 bg-cream rounded-4 h-100">
+                  <div class="stat-number">24</div>
+                  <div class="small text-body-secondary mt-1">zemí původu</div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 bg-espresso text-white rounded-4 h-100 d-flex flex-column justify-content-center">
+                  <i class="bi bi-award fs-2 text-caramel"></i>
+                  <div class="small mt-1">pouze káva s hodnocením SCA 80+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jak coffeeBase funguje -->
+    <section class="py-5 bg-cream">
+      <div class="container">
+        <h2 class="text-center mb-5">Jak coffeeBase funguje</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="text-center px-lg-3">
+              <span class="feature-icon mb-3"><i class="bi bi-search"></i></span>
+              <h3 class="h5">1. Hledejte</h3>
+              <p class="text-body-secondary">Filtrujte kávy podle země, zpracování, profilu pražení nebo ceny. Tabulku lze řadit i prohledávat.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center px-lg-3">
+              <span class="feature-icon mb-3"><i class="bi bi-bag-heart"></i></span>
+              <h3 class="h5">2. Vyberte</h3>
+              <p class="text-body-secondary">U každé kávy najdete chuťové tóny, odrůdu, nadmořskou výšku i doporučení pro přípravu.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center px-lg-3">
+              <span class="feature-icon mb-3"><i class="bi bi-share"></i></span>
+              <h3 class="h5">3. Sdílejte</h3>
+              <p class="text-body-secondary">Ochutnali jste něco, co v databázi chybí? Přidejte kávu přes formulář a rozšiřte komunitu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Káva měsíce -->
+    <section class="py-5">
+      <div class="container">
+        <div class="card border-0 shadow-sm overflow-hidden">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="img/card-salek.jpg" class="img-fluid h-100 w-100 object-fit-cover" alt="Šálek černé kávy na dřevěném stole" style="min-height: 260px;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body p-4 p-lg-5">
+                <span class="badge rounded-pill text-bg-warning mb-2"><i class="bi bi-star-fill me-1"></i>Káva měsíce</span>
+                <h2 class="card-title">Panama Boquete Gesha</h2>
+                <p class="text-body-secondary mb-2"><i class="bi bi-geo-alt me-1"></i>Kafemlýn, Plzeň</p>
+                <p class="card-text">Legendární odrůda Gesha z panamského Boquete. Mimořádně květinový a elegantní šálek, který právem patří mezi nejvýše hodnocené kávy světa.</p>
+                <div class="mb-3">
+                  <span class="badge note-badge">jasmín</span>
+                  <span class="badge note-badge">broskev</span>
+                  <span class="badge note-badge">bergamot</span>
+                </div>
+                <button type="button" class="btn btn-coffee" data-bs-toggle="modal" data-bs-target="#coffeeOfMonthModal">
+                  <i class="bi bi-info-circle me-2"></i>Zobrazit detail
+                </button>
+                <a href="kavy.html?prazirna=Kafemlýn" class="btn btn-outline-secondary ms-1"><i class="bi bi-list-ul me-2"></i>Další kávy pražírny</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tipy redakce -->
+    <section class="pb-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+          <h2 class="mb-0">Tipy redakce</h2>
+          <a href="kavy.html" class="btn btn-sm btn-outline-coffee">Všechny kávy <i class="bi bi-chevron-right"></i></a>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card card-coffee h-100">
+              <img src="img/card-latte.jpg" class="card-img-top" alt="Šálky cappuccina s latte art">
+              <div class="card-body">
+                <span class="badge text-bg-secondary mb-2">Filtr</span>
+                <h3 class="card-title h5">Etiopie Guji Hambela</h3>
+                <p class="small text-body-secondary mb-2">Pražírna Vltava · Praha</p>
+                <p class="card-text">Sladká přírodní Etiopie plná lesního ovoce s dlouhou čokoládovou dochutí.</p>
+              </div>
+              <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
+                <strong>370 Kč <span class="fw-normal small text-body-secondary">/ 250 g</span></strong>
+                <span class="sca-score" data-bs-toggle="tooltip" data-bs-title="Hodnocení podle SCA (0–100)"><i class="bi bi-award me-1"></i>84,0</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card card-coffee h-100">
+              <img src="img/card-portafilter.jpg" class="card-img-top" alt="Páky kávovaru se zrny, mletou kávou a latte">
+              <div class="card-body">
+                <span class="badge text-bg-dark mb-2">Espresso</span>
+                <h3 class="card-title h5">Brazílie Cerrado Mineiro</h3>
+                <p class="small text-body-secondary mb-2">Pražírna Pod Hradem · Český Krumlov</p>
+                <p class="card-text">Sladká a nízce kyselá Brazílie, ideální základ pro espresso i cappuccino.</p>
+              </div>
+              <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
+                <strong>260 Kč <span class="fw-normal small text-body-secondary">/ 250 g</span></strong>
+                <span class="sca-score" data-bs-toggle="tooltip" data-bs-title="Hodnocení podle SCA (0–100)"><i class="bi bi-award me-1"></i>84,0</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <div class="card card-coffee h-100">
+              <img src="img/slide-pourover.jpg" class="card-img-top" alt="Příprava filtrované kávy">
+              <div class="card-body">
+                <span class="badge text-bg-secondary mb-2">Filtr</span>
+                <h3 class="card-title h5">Keňa Nyeri Gatomboya</h3>
+                <p class="small text-body-secondary mb-2">Severka Coffee · Liberec</p>
+                <p class="card-text">Šťavnatá kyselinka černého rybízu a plné tělo, které dělají z Keni oblíbence baristů.</p>
+              </div>
+              <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
+                <strong>420 Kč <span class="fw-normal small text-body-secondary">/ 250 g</span></strong>
+                <span class="sca-score" data-bs-toggle="tooltip" data-bs-title="Hodnocení podle SCA (0–100)"><i class="bi bi-award me-1"></i>84,5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-5 bg-espresso text-white">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <h2 class="text-white h3 mb-2"><i class="bi bi-envelope-paper text-caramel me-2"></i>Novinky z pražíren</h2>
+            <p class="mb-0 text-white-50">Jednou měsíčně pošleme přehled nových káv a sezónních novinek. Žádný spam.</p>
+          </div>
+          <div class="col-lg-6">
+            <form id="newsletterForm" class="input-group input-group-lg">
+              <span class="input-group-text"><i class="bi bi-at"></i></span>
+              <input type="email" class="form-control" name="email" placeholder="vas@email.cz" aria-label="E-mail" required>
+              <button class="btn btn-coffee" type="submit"><i class="bi bi-send me-1"></i>Odebírat</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal: detail kávy měsíce -->
+  <div class="modal fade" id="coffeeOfMonthModal" tabindex="-1" aria-labelledby="coffeeOfMonthLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="coffeeOfMonthLabel"><i class="bi bi-star-fill text-warning me-2"></i>Panama Boquete Gesha</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zavřít"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-5">
+              <img src="img/card-salek.jpg" class="img-fluid rounded-3" alt="Šálek kávy">
+              <div class="mt-3">
+                <div class="d-flex justify-content-between small mb-1"><span>Kyselost</span><span>4/5</span></div>
+                <div class="progress mb-2" role="progressbar" aria-label="Kyselost" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="height: 8px;"><div class="progress-bar bg-warning" style="width: 80%"></div></div>
+                <div class="d-flex justify-content-between small mb-1"><span>Sladkost</span><span>4/5</span></div>
+                <div class="progress mb-2" role="progressbar" aria-label="Sladkost" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="height: 8px;"><div class="progress-bar bg-warning" style="width: 80%"></div></div>
+                <div class="d-flex justify-content-between small mb-1"><span>Tělo</span><span>2/5</span></div>
+                <div class="progress" role="progressbar" aria-label="Tělo" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="height: 8px;"><div class="progress-bar bg-warning" style="width: 40%"></div></div>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <p>Gesha (někdy psaná Geisha) pochází původně z etiopských lesů u města Gesha. Světovou proslulost získala v roce 2004, kdy farma Hacienda La Esmeralda v panamském Boquete s touto odrůdou ovládla soutěž Best of Panama. Dnes patří k nejdražším kávám na světě.</p>
+              <table class="table table-sm mb-0">
+                <tbody>
+                  <tr><th scope="row">Pražírna</th><td>Kafemlýn, Plzeň</td></tr>
+                  <tr><th scope="row">Původ</th><td>Panama, Boquete</td></tr>
+                  <tr><th scope="row">Odrůda</th><td>Gesha</td></tr>
+                  <tr><th scope="row">Zpracování</th><td>Praná</td></tr>
+                  <tr><th scope="row">Nadmořská výška</th><td>1600–1800 m n. m.</td></tr>
+                  <tr><th scope="row">Pražení</th><td><span class="badge text-bg-secondary">Filtr</span></td></tr>
+                  <tr><th scope="row">SCA skóre</th><td>88,5</td></tr>
+                  <tr><th scope="row">Cena</th><td>880 Kč / 250 g</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="alert alert-warning d-flex align-items-start mt-4 mb-0" role="alert">
+            <i class="bi bi-lightbulb me-2 fs-5"></i>
+            <div><strong>Tip na přípravu:</strong> V60, 15 g kávy na 250 g vody o teplotě 93 °C, celkový čas 2:45. Nechte kávu trochu vychladnout – květinové tóny se projeví výrazněji.</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="priprava.html" class="btn btn-outline-coffee"><i class="bi bi-droplet-half me-1"></i>Návod na V60</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast pro newsletter -->
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+    <div id="newsletterToast" class="toast align-items-center text-bg-success border-0" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body"><i class="bi bi-check-circle me-2"></i>Díky! Přihlášení k odběru proběhlo úspěšně.</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Zavřít"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Patička -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <a class="brand-logo text-decoration-none" href="index.html"><span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>coffee<span class="brand-accent">Base</span></a>
+          <p class="mt-3 small">Databáze výběrových káv z lokálních českých pražíren. Semestrální projekt vytvořený pomocí frameworku Bootstrap 5.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Navigace</h5>
+          <ul class="list-unstyled small">
+            <li><a href="kavy.html">Databáze káv</a></li>
+            <li><a href="prazirny.html">Pražírny</a></li>
+            <li><a href="priprava.html">Příprava kávy</a></li>
+            <li><a href="pridat.html">Přidat kávu</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Sledujte nás</h5>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="small mb-0">&copy; 2026 coffeeBase · Fotografie: Unsplash</p>
+    </div>
+  </footer>
+
+  <button type="button" class="btn btn-coffee rounded-circle back-to-top" aria-label="Zpět nahoru"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
