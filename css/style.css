@@ -87,7 +87,11 @@ h1, h2, h3, h4, h5, .display-font {
   font-size: 1.1rem;
   margin-right: .4rem;
   vertical-align: middle;
+  transition: background-color .2s ease;
 }
+
+.brand-logo:hover .brand-mark,
+.brand-logo:focus-visible .brand-mark { background: #fff; }
 
 .brand-logo .brand-accent { color: var(--cb-caramel); }
 
@@ -238,8 +242,21 @@ h1, h2, h3, h4, h5, .display-font {
 .nav-tabs .nav-link { color: var(--cb-coffee); font-weight: 500; }
 .nav-tabs .nav-link.active { color: var(--cb-espresso); }
 
+.nav-tabs .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.nav-tabs .nav-link .bi {
+  font-size: .9em;
+  line-height: 1;
+}
+
+.nav-tabs .nav-link .bi::before { vertical-align: 0; }
+
 @media (max-width: 575.98px) {
-  .nav-tabs .nav-link { padding: .5rem .35rem; font-size: .85rem; }
+  .nav-tabs .nav-link { padding: .5rem .35rem; font-size: .85rem; gap: .3rem; }
 }
 
 .recipe-step {
