@@ -3,3 +3,6 @@ https://davca3.github.io/coffeebase/
 
 Zdrojový kód:
 https://github.com/davca3/coffeebase
+
+Wireframe (Figma):
+https://www.figma.com/design/moCpVljmrCeL8Y4nv6roON

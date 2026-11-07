@@ -1,7 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="435" height="2873" viewBox="-10 -50 435 2873" font-family="Helvetica, Arial, sans-serif">
 <rect x="-10" y="-50" width="435" height="2873" fill="#fafafa"/>
-<text x="0" y="-22" font-size="15" font-weight="bold" fill="#222">coffeeBase – wireframe úvodní stránky (mobil, 375 px)</text>
-<rect x="0" y="0" width="375" height="2803" fill="#fff"/>
+<text id="Nadpis" x="0" y="-22" font-size="15" font-weight="bold" fill="#222">coffeeBase – wireframe úvodní stránky (mobil, 375 px)</text>
+<g id="Mobil 375 px">
+<rect id="Pozadí stránky" x="0" y="0" width="375" height="2803" fill="#fff"/>
+<g id="1 Navbar (logo + hamburger)">
 <rect x="0" y="0" width="375" height="60" fill="#444"/>
 <circle cx="32" cy="30" r="15" fill="#888"/>
 <text x="56" y="36" font-size="19" font-weight="bold" fill="#fff" text-anchor="start">coffeeBase</text>
@@ -9,9 +11,8 @@
 <rect x="324" y="22" width="24" height="3" rx="1.5" fill="#ddd"/>
 <rect x="324" y="29" width="24" height="3" rx="1.5" fill="#ddd"/>
 <rect x="324" y="36" width="24" height="3" rx="1.5" fill="#ddd"/>
-<circle cx="397" cy="30" r="13" fill="#c8873a"/>
-<text x="397" y="34.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">1</text>
-<line x1="375" y1="30" x2="384" y2="30" stroke="#c8873a" stroke-width="1.5"/>
+</g>
+<g id="2 Carousel">
 <rect x="0" y="60" width="375" height="330" rx="2" fill="#ececec" stroke="#9a9a9a" stroke-width="1.5"/>
 <line x1="0" y1="60" x2="375" y2="390" stroke="#c4c4c4" stroke-width="1.5"/>
 <line x1="375" y1="60" x2="0" y2="390" stroke="#c4c4c4" stroke-width="1.5"/>
@@ -30,14 +31,12 @@
 <rect x="189.5" y="366" width="26" height="4" fill="#ccc"/>
 <rect x="221.5" y="366" width="26" height="4" fill="#ccc"/>
 <text x="187.5" y="100" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">CAROUSEL – 4 rotující fotografie</text>
-<circle cx="397" cy="225" r="13" fill="#c8873a"/>
-<text x="397" y="229.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">2</text>
-<line x1="375" y1="225" x2="384" y2="225" stroke="#c8873a" stroke-width="1.5"/>
+</g>
+<g id="3 Breadcrumb">
 <rect x="0" y="390" width="375" height="40" fill="#f1f1f1"/>
 <text x="16" y="415" font-size="12" font-weight="normal" fill="#555" text-anchor="start">⌂ Úvod</text>
-<circle cx="397" cy="410" r="13" fill="#c8873a"/>
-<text x="397" y="414.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">3</text>
-<line x1="375" y1="410" x2="384" y2="410" stroke="#c8873a" stroke-width="1.5"/>
+</g>
+<g id="4 Úvodní text a tlačítka">
 <text x="16" y="470" font-size="24" font-weight="bold" fill="#333" text-anchor="start">Vítejte v coffeeBase</text>
 <rect x="16" y="490" width="343" height="6" rx="3" fill="#d4d4d4"/>
 <rect x="16" y="503" width="343" height="6" rx="3" fill="#d4d4d4"/>
@@ -53,9 +52,8 @@
 <rect x="16" y="663" width="130" height="34" rx="6" fill="#fff" stroke="#555" stroke-width="1.5"/>
 <text x="81.0" y="684.0" font-size="12" font-weight="bold" fill="#555" text-anchor="middle">Přidat kávu</text>
 <text x="16" y="723" font-size="12" font-weight="normal" fill="#555" text-anchor="start">Odkaz (btn-link) →</text>
-<circle cx="397" cy="549" r="13" fill="#c8873a"/>
-<text x="397" y="553.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">4</text>
-<line x1="375" y1="549" x2="384" y2="549" stroke="#c8873a" stroke-width="1.5"/>
+</g>
+<g id="5 Statistiky">
 <rect x="16.0" y="745" width="109.0" height="74" rx="10" fill="#f1f1f1" stroke="#ccc" stroke-width="1.5"/>
 <text x="70.5" y="783" font-size="26" font-weight="bold" fill="#888" text-anchor="middle">60</text>
 <rect x="34.0" y="797" width="73" height="6" rx="3" fill="#d4d4d4"/>
@@ -67,9 +65,8 @@
 <rect x="268.0" y="797" width="73" height="6" rx="3" fill="#d4d4d4"/>
 <rect x="16" y="829" width="343" height="64" rx="10" fill="#666" stroke="#666" stroke-width="1.5"/>
 <text x="187.5" y="865" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Box SCA 80+</text>
-<circle cx="397" cy="819" r="13" fill="#c8873a"/>
-<text x="397" y="823.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">5</text>
-<line x1="375" y1="819" x2="384" y2="819" stroke="#c8873a" stroke-width="1.5"/>
+</g>
+<g id="6 Jak coffeeBase funguje">
 <rect x="0" y="923" width="375" height="430" fill="#f6f6f6"/>
 <text x="187.5" y="963" font-size="19" font-weight="bold" fill="#333" text-anchor="middle">Jak coffeeBase funguje</text>
 <rect x="163.5" y="993" width="48" height="48" rx="12" fill="#fff" stroke="#aaa" stroke-width="1.5"/>
@@ -87,9 +84,8 @@
 <text x="187.5" y="1301" font-size="15" font-weight="bold" fill="#333" text-anchor="middle">3. Krok</text>
 <rect x="56" y="1313" width="263" height="6" rx="3" fill="#d4d4d4"/>
 <rect x="56" y="1325" width="184" height="6" rx="3" fill="#d4d4d4"/>
-<circle cx="397" cy="963" r="13" fill="#c8873a"/>
-<text x="397" y="967.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">6</text>
-<line x1="375" y1="963" x2="384" y2="963" stroke="#c8873a" stroke-width="1.5"/>
+</g>
+<g id="7 Káva měsíce (karta + modal)">
 <rect x="16" y="1383" width="343" height="470" rx="8" fill="#fff" stroke="#aaa" stroke-width="1.5"/>
 <rect x="16" y="1383" width="343" height="210" rx="2" fill="#ececec" stroke="#9a9a9a" stroke-width="1.5"/>
 <line x1="16" y1="1383" x2="359" y2="1593" stroke="#c4c4c4" stroke-width="1.5"/>
@@ -111,9 +107,8 @@
 <text x="122.0" y="1828.0" font-size="12" font-weight="bold" fill="#555" text-anchor="middle">Další kávy pražírny</text>
 <path d="M188 1782 h22" stroke="#c8873a" stroke-width="1.5" stroke-dasharray="4 3"/>
 <text x="216" y="1786" font-size="11" font-weight="bold" fill="#c8873a" text-anchor="start">→ otevře Modal</text>
-<circle cx="397" cy="1403" r="13" fill="#c8873a"/>
-<text x="397" y="1407.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">7</text>
-<line x1="375" y1="1403" x2="384" y2="1403" stroke="#c8873a" stroke-width="1.5"/>
+</g>
+<g id="8 Tipy redakce">
 <text x="16" y="1903" font-size="19" font-weight="bold" fill="#333" text-anchor="start">Tipy redakce</text>
 <rect x="259" y="1887" width="100" height="26" rx="6" fill="#fff" stroke="#555" stroke-width="1.5"/>
 <text x="309.0" y="1904.0" font-size="12" font-weight="bold" fill="#555" text-anchor="middle">Všechny kávy</text>
@@ -134,9 +129,8 @@
 <text x="187.5" y="2254" font-size="12" font-weight="normal" fill="#888" text-anchor="middle">Karta 2 (stejná struktura)</text>
 <rect x="16" y="2291" width="343" height="60" rx="8" fill="#fff" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5 4"/>
 <text x="187.5" y="2326" font-size="12" font-weight="normal" fill="#888" text-anchor="middle">Karta 3 (stejná struktura)</text>
-<circle cx="397" cy="1983" r="13" fill="#c8873a"/>
-<text x="397" y="1987.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">8</text>
-<line x1="375" y1="1983" x2="384" y2="1983" stroke="#c8873a" stroke-width="1.5"/>
+</g>
+<g id="9 Newsletter">
 <rect x="0" y="2383" width="375" height="170" fill="#555"/>
 <text x="16" y="2423" font-size="19" font-weight="bold" fill="#fff" text-anchor="start">Novinky z pražíren</text>
 <rect x="16" y="2439" width="343" height="6" rx="3" fill="#d4d4d4"/>
@@ -147,9 +141,8 @@
 <text x="68" y="2506" font-size="13" font-weight="normal" fill="#999" text-anchor="start">e-mail</text>
 <rect x="249" y="2479" width="110" height="44" rx="6" fill="#888"/>
 <text x="304" y="2506" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">Odebírat</text>
-<circle cx="397" cy="2423" r="13" fill="#c8873a"/>
-<text x="397" y="2427.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">9</text>
-<line x1="375" y1="2423" x2="384" y2="2423" stroke="#c8873a" stroke-width="1.5"/>
+</g>
+<g id="10 Patička">
 <rect x="0" y="2553" width="375" height="250" fill="#333"/>
 <circle cx="30" cy="2593" r="13" fill="#777"/>
 <text x="50" y="2599" font-size="17" font-weight="bold" fill="#fff" text-anchor="start">coffeeBase</text>
@@ -167,13 +160,24 @@
 <rect x="269.5" y="2693" width="28" height="28" rx="5" fill="#333" stroke="#999" stroke-width="1.5"/>
 <line x1="16" y1="2765" x2="359" y2="2765" stroke="#666"/>
 <rect x="16" y="2779" width="170" height="6" rx="3" fill="#666"/>
-<circle cx="397" cy="2593" r="13" fill="#c8873a"/>
-<text x="397" y="2597.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">10</text>
-<line x1="375" y1="2593" x2="384" y2="2593" stroke="#c8873a" stroke-width="1.5"/>
+</g>
+<g id="11 Zpět nahoru">
 <circle cx="339" cy="2733" r="20" fill="#888" stroke="#fff" stroke-width="2"/>
 <text x="339" y="2739" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">↑</text>
-<circle cx="397" cy="2733" r="13" fill="#c8873a"/>
-<text x="397" y="2737.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">11</text>
-<line x1="375" y1="2733" x2="384" y2="2733" stroke="#c8873a" stroke-width="1.5"/>
-<rect x="0" y="0" width="375" height="2803" fill="none" stroke="#222" stroke-width="2"/>
+</g>
+<rect id="Rámeček displeje" x="0" y="0" width="375" height="2803" fill="none" stroke="#222" stroke-width="2"/>
+</g>
+<g id="Číslování sekcí">
+<g id="Značka 1"><line x1="375" y1="30" x2="384" y2="30" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="30" r="13" fill="#c8873a"/><text x="397" y="34.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">1</text></g>
+<g id="Značka 2"><line x1="375" y1="225" x2="384" y2="225" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="225" r="13" fill="#c8873a"/><text x="397" y="229.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">2</text></g>
+<g id="Značka 3"><line x1="375" y1="410" x2="384" y2="410" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="410" r="13" fill="#c8873a"/><text x="397" y="414.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">3</text></g>
+<g id="Značka 4"><line x1="375" y1="549" x2="384" y2="549" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="549" r="13" fill="#c8873a"/><text x="397" y="553.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">4</text></g>
+<g id="Značka 5"><line x1="375" y1="819" x2="384" y2="819" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="819" r="13" fill="#c8873a"/><text x="397" y="823.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">5</text></g>
+<g id="Značka 6"><line x1="375" y1="963" x2="384" y2="963" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="963" r="13" fill="#c8873a"/><text x="397" y="967.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">6</text></g>
+<g id="Značka 7"><line x1="375" y1="1403" x2="384" y2="1403" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="1403" r="13" fill="#c8873a"/><text x="397" y="1407.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">7</text></g>
+<g id="Značka 8"><line x1="375" y1="1983" x2="384" y2="1983" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="1983" r="13" fill="#c8873a"/><text x="397" y="1987.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">8</text></g>
+<g id="Značka 9"><line x1="375" y1="2423" x2="384" y2="2423" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="2423" r="13" fill="#c8873a"/><text x="397" y="2427.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">9</text></g>
+<g id="Značka 10"><line x1="375" y1="2593" x2="384" y2="2593" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="2593" r="13" fill="#c8873a"/><text x="397" y="2597.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">10</text></g>
+<g id="Značka 11"><line x1="375" y1="2733" x2="384" y2="2733" stroke="#c8873a" stroke-width="1.5"/><circle cx="397" cy="2733" r="13" fill="#c8873a"/><text x="397" y="2737.5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">11</text></g>
+</g>
 </svg>
