@@ -1,2 +1,5 @@
 URL projektu coffeeBase:
-DOPLNIT_PO_NASAZENI
+https://davca3.github.io/coffeebase/
+
+Zdrojový kód:
+https://github.com/davca3/coffeebase
