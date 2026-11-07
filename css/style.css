@@ -293,6 +293,27 @@ h1, h2, h3, h4, h5, .display-font {
   --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23c8873a' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
 }
 
+/* ---------- Alerty ---------- */
+.alert-info {
+  --bs-alert-color: var(--cb-espresso);
+  --bs-alert-bg: var(--cb-cream);
+  --bs-alert-border-color: rgba(111, 78, 55, .18);
+  --bs-alert-link-color: var(--cb-caramel-dark);
+}
+
+.alert-warning {
+  --bs-alert-color: #5a3a14;
+  --bs-alert-bg: #fbeedb;
+  --bs-alert-border-color: rgba(200, 135, 58, .35);
+  --bs-alert-link-color: #5a3a14;
+}
+
+.alert-info,
+.alert-warning { border-left: 4px solid var(--cb-caramel); }
+
+.alert-info .bi,
+.alert-warning .bi { color: var(--cb-caramel-dark); }
+
 /* ---------- Collapse – časté dotazy ---------- */
 .faq-item {
   background: #fff;
@@ -420,6 +441,22 @@ h1, h2, h3, h4, h5, .display-font {
   margin-bottom: 1rem;
 }
 
+/* teplé rámečky a krémové přídavky místo výchozí šedé */
+.form-control,
+.form-select,
+.form-check-input,
+.input-group-text {
+  border-color: rgba(111, 78, 55, .25);
+}
+
+.input-group-text {
+  background-color: var(--cb-cream);
+  color: var(--cb-coffee);
+}
+
+.form-range::-webkit-slider-runnable-track { background-color: rgba(200, 135, 58, .22); }
+.form-range::-moz-range-track { background-color: rgba(200, 135, 58, .22); }
+
 .form-control:focus,
 .form-select:focus,
 .form-check-input:focus {
@@ -434,6 +471,12 @@ h1, h2, h3, h4, h5, .display-font {
 
 .form-range::-webkit-slider-thumb { background: var(--cb-caramel); }
 .form-range::-moz-range-thumb { background: var(--cb-caramel); }
+
+/* při tažení a fokusu místo výchozí modré */
+.form-range::-webkit-slider-thumb:active { background: var(--cb-caramel-dark); }
+.form-range::-moz-range-thumb:active { background: var(--cb-caramel-dark); }
+.form-range:focus::-webkit-slider-thumb { box-shadow: 0 0 0 1px #fff, 0 0 0 .25rem rgba(200, 135, 58, .35); }
+.form-range:focus::-moz-range-thumb { box-shadow: 0 0 0 1px #fff, 0 0 0 .25rem rgba(200, 135, 58, .35); }
 
 /* ---------- Patička ---------- */
 .site-footer {
