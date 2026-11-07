@@ -40,6 +40,31 @@ h1, h2, h3, h4, h5, .display-font {
   color: var(--cb-caramel);
 }
 
+/* ikona menšího a lehčího řezu, aby opticky odpovídala textu */
+.navbar-coffee .navbar-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+}
+
+.navbar-coffee .nav-link .bi {
+  font-size: .875em;
+  line-height: 1;
+  opacity: .75;
+}
+
+.navbar-coffee .nav-link .bi::before { vertical-align: 0; }
+
+.navbar-coffee .nav-link.active .bi,
+.navbar-coffee .nav-link:hover .bi { opacity: 1; }
+
+@media (min-width: 992px) {
+  .navbar-coffee .navbar-nav .nav-link {
+    padding-left: .8rem;
+    padding-right: .8rem;
+  }
+}
+
 .brand-logo {
   font-family: "Fraunces", Georgia, serif;
   font-size: 1.6rem;
