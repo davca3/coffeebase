@@ -139,8 +139,8 @@ h1, h2, h3, h4, h5, .display-font {
 .hero-carousel .carousel-caption {
   bottom: 18%;
   text-align: left;
-  left: 10%;
-  right: 10%;
+  left: 0;
+  right: 0;
 }
 
 .hero-carousel .carousel-caption h2 {
@@ -153,9 +153,17 @@ h1, h2, h3, h4, h5, .display-font {
   font-size: 1.1rem;
 }
 
+/* šipky dole v rozích na úrovni indikátorů, aby nepřekrývaly text zarovnaný na container */
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next {
+  top: auto;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
 @media (max-width: 767.98px) {
   .hero-carousel .carousel-item img { height: 360px; }
-  .hero-carousel .carousel-caption { bottom: 12%; left: 8%; right: 8%; }
+  .hero-carousel .carousel-caption { bottom: 12%; }
   .hero-carousel .carousel-caption p { font-size: .95rem; }
 }
 
